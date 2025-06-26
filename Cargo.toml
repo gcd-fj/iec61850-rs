@@ -1,0 +1,29 @@
+[package]
+name = "iec61850-rs"
+version = "0.1.0"
+edition = "2021"
+authors = ["Contributors"]
+description = "A Rust implementation of the IEC 61850 protocol"
+license = "GPL-3.0"
+repository = "https://github.com/username/iec61850-rs"
+readme = "README.md"
+keywords = ["iec61850", "power", "automation", "scada", "energy"]
+categories = ["network-programming", "api-bindings"]
+
+[dependencies]
+tokio = { version = "1.28", features = ["full"] }
+bytes = "1.4"
+thiserror = "1.0"
+log = "0.4"
+rustls = { version = "0.21", optional = true }
+native-tls = { version = "0.2", optional = true }
+async-trait = "0.1"
+chrono = "0.4"
+
+[features]
+default = []
+rustls-tls = ["rustls"]
+native-tls-support = ["native-tls"]
+
+[dev-dependencies]
+tokio-test = "0.4"
